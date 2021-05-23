@@ -1,0 +1,3 @@
+databaseChangeLog:
+  - changeset:
+      id: 1
