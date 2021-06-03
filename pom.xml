@@ -75,8 +75,8 @@
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-            <spring.profiles.active>local,no-liquibase</spring.profiles.active>
-
+        <spring.profiles.active>local,no-liquibase</spring.profiles.active>
+        <start-class>com.HustleDBServer</start-class>
     </properties>
     <build>
         <plugins>
