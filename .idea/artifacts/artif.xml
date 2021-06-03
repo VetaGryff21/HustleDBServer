@@ -1,6 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" build-on-make="true" name="artif">
-    <output-path>$PROJECT_DIR$/out/artifacts/artif</output-path>
-    <root id="archive" name="artif.jar" />
-  </artifact>
-</component>
