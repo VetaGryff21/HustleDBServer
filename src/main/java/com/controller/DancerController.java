@@ -1,16 +1,11 @@
 package com.controller;
 
 import com.model.Dancer;
-import liquibase.pro.packaged.T;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.service.DancerService;
 
@@ -26,7 +21,7 @@ public class DancerController {
         this.dancerService = dancerService;
     }
 
-    @GetMapping(value = "/dancers")
+    @GetMapping("/dancers")
     public ResponseEntity<List<Dancer>> read() {
         final List<Dancer> dancers= dancerService.readAll();
 
@@ -35,7 +30,7 @@ public class DancerController {
                : new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
-    @GetMapping(value = "/dancers/code/{code}")
+    @GetMapping("/dancers/code/{code}")
     public ResponseEntity<Dancer> getDancerByCode(@PathVariable(name = "code") Integer code){
         final Optional<Dancer> dancer = dancerService.getDancerByCode(code);
         return dancer.isPresent()
@@ -43,12 +38,17 @@ public class DancerController {
                : new ResponseEntity<>(HttpStatus.NOT_FOUND);
     };
 
-    @GetMapping(value = "/dancers/fullname/{fullname}")
+    @GetMapping("/dancers/fullname/{fullname}")
     public ResponseEntity<List<Dancer>> getDancersByName(@PathVariable(name = "fullname") String name) {
         final List<Dancer> dancers= dancerService.getDancersByName(name);
 
         return dancers != null
                ? new ResponseEntity<>(dancers, HttpStatus.OK)
                : new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
+
+    @GetMapping("/")
+    public String index() {
+        return "Welcome to Heroku demo !!";
     }
 }
