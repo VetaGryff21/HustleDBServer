@@ -26,10 +26,10 @@ public class DancerServiceImpl implements DancerService {
         return dancerRepository.findAll();
     }
 
-    @Override
-    public Dancer read(int id) {
-        return dancerRepository.getOne(id);
-    }
+//    @Override
+//    public Dancer read(int id) {
+//        return dancerRepository.getOne(id);
+//    }
 
     @Override
     public boolean update(Dancer dancer, int code) {

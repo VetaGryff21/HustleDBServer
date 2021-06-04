@@ -27,7 +27,7 @@ public interface DancerService {
      * @param id - ID клиента
      * @return - объект клиента с заданным ID
      */
-    Dancer read(int id);
+//    Dancer read(int id);
 
     /**
      * Обновляет клиента с заданным ID,
