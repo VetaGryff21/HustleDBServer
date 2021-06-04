@@ -1,1 +1,1 @@
-web: java -Dserver.port=$PORT -cp target/HustleDBServer-1.0-SNAPSHOT.jar com.HustleDBServer
+web: java -Dserver.port=$PORT -jar target/HustleDBServer-1.0-SNAPSHOT.jar
