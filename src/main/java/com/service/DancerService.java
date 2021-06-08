@@ -47,7 +47,9 @@ public interface DancerService {
      */
     boolean delete(int id);
 
-    Optional<Dancer> getDancerByCode(Integer code);
+    List<Dancer> getDancerByCode(Integer code);
 
     List<Dancer> getDancersByName(String name);
+
+    List<Dancer> getDancersByClub(String club);
 }

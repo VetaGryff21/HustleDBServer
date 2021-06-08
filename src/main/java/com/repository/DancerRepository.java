@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface DancerRepository extends JpaRepository<Dancer, Integer> {
-    public Optional<Dancer> getDancerByCode(Integer code);
+    public List<Dancer> getDancerByCode(Integer code);
     public List<Dancer> findByFullnameContaining(String name);
+    public List<Dancer> findByClubContaining(String club);
 }

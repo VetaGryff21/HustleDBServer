@@ -26,11 +26,6 @@ public class DancerServiceImpl implements DancerService {
         return dancerRepository.findAll();
     }
 
-//    @Override
-//    public Dancer read(int id) {
-//        return dancerRepository.getOne(id);
-//    }
-
     @Override
     public boolean update(Dancer dancer, int code) {
         if (dancerRepository.existsById(code)) {
@@ -43,20 +38,21 @@ public class DancerServiceImpl implements DancerService {
 
     @Override
     public boolean delete(int code) {
-//        if(dancerRepository.existsById(code)) {
-//            dancerRepository.deleteById(code);
-//            return true;
-//        }
         return false;
     }
 
     @Override
-    public Optional<Dancer> getDancerByCode(Integer code) {
+    public List<Dancer> getDancerByCode(Integer code) {
         return dancerRepository.getDancerByCode(code);
     }
 
     @Override
     public List<Dancer> getDancersByName(String name) {
         return dancerRepository.findByFullnameContaining(name);
+    }
+
+    @Override
+    public List<Dancer> getDancersByClub(String club) {
+        return dancerRepository.findByClubContaining(club);
     }
 }

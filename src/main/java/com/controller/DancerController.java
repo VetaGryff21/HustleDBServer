@@ -31,16 +31,25 @@ public class DancerController {
     }
 
     @GetMapping("/dancers/code/{code}")
-    public ResponseEntity<Dancer> getDancerByCode(@PathVariable(name = "code") Integer code){
-        final Optional<Dancer> dancer = dancerService.getDancerByCode(code);
-        return dancer.isPresent()
-               ? new ResponseEntity<>(dancer.get(), HttpStatus.OK)
+    public ResponseEntity<List<Dancer>> getDancerByCode(@PathVariable(name = "code") Integer code){
+        final List<Dancer> dancers = dancerService.getDancerByCode(code);
+        return dancers  != null
+               ? new ResponseEntity<>(dancers, HttpStatus.OK)
                : new ResponseEntity<>(HttpStatus.NOT_FOUND);
     };
 
     @GetMapping("/dancers/fullname/{fullname}")
     public ResponseEntity<List<Dancer>> getDancersByName(@PathVariable(name = "fullname") String name) {
-        final List<Dancer> dancers= dancerService.getDancersByName(name);
+        final List<Dancer> dancers = dancerService.getDancersByName(name);
+
+        return dancers != null
+               ? new ResponseEntity<>(dancers, HttpStatus.OK)
+               : new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
+
+    @GetMapping("/dancers/club/{club}")
+    public ResponseEntity<List<Dancer>> getDancersByClub(@PathVariable(name = "club") String club) {
+        final List<Dancer> dancers = dancerService.getDancersByClub(club);
 
         return dancers != null
                ? new ResponseEntity<>(dancers, HttpStatus.OK)
