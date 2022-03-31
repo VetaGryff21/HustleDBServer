@@ -1,0 +1,12 @@
+
+services:
+  postgres-server:
+    image: postgres:13.1
+    restart: always
+    environment:
+      - POSTGRES_PASSWORD=5432
+      - POSTGRES_USER=root
+      - POSTGRES_DB=postgres
+    ports:
+      - ${POSTGRES_PORT:-5432}:5432
+
