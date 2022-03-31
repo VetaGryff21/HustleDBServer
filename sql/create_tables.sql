@@ -1,0 +1,20 @@
+CREATE TABLE IF NOT EXISTS dancersdata (
+  code INT NOT NULL,
+  sex varchar(4) NOT NULL,
+  fullname varchar(100) NOT NULL,
+  ratingd varchar(100) NOT NULL,
+  bg INT NOT NULL,
+  rs INT NOT NULL,
+  m INT NOT NULL,
+  s INT NOT NULL,
+  ch INT NOT NULL,
+  resd INT NOT NULL,
+  club varchar(100) NOT NULL,
+  ratingc varchar(100) NOT NULL,
+  e INT NOT NULL,
+  d INT NOT NULL,
+  c INT NOT NULL,
+  b INT NOT NULL,
+  a INT NOT NULL,
+  resc INT NOT NULL
+);
